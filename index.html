@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imran Hossain</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+
+        :root {
+            --bg:             #F2F0EB;
+            --text-primary:   #1C1C1C;
+            --text-secondary: #6B6560;
+            --accent:         #B5281C;
+            --border:         #D8D4CE;
+
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans:  'Space Grotesk', sans-serif;
+
+            --max-w:    1100px;
+            --side-pad: 4rem;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        ::selection { background: var(--accent); color: #fff; }
+
+        body {
+            background-color: var(--bg);
+            background-image: radial-gradient(circle, #C4C0B8 1px, transparent 1px);
+            background-size: 28px 28px;
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        /* ══════════════════════════════════
+           HEADER
+        ══════════════════════════════════ */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(242, 240, 235, 0.93);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 var(--side-pad);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .site-name {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+            text-decoration: none;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .site-name span { color: var(--accent); }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 2.25rem;
+            list-style: none;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px; left: 0;
+            width: 0; height: 1.5px;
+            background: var(--accent);
+            transition: width 0.25s;
+        }
+
+        .main-nav a:hover { color: var(--accent); }
+        .main-nav a:hover::after { width: 100%; }
+
+        .nav-cv a {
+            color: var(--accent) !important;
+            border: 1px solid var(--accent);
+            padding: 0.28rem 0.8rem;
+            border-radius: 2px;
+            transition: background 0.2s, color 0.2s !important;
+        }
+
+        .nav-cv a::after { display: none; }
+        .nav-cv a:hover { background: var(--accent); color: #fff !important; }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px; height: 1.5px;
+            background: var(--text-primary);
+            transition: all 0.3s;
+        }
+
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            padding: 1.5rem var(--side-pad);
+            gap: 1.25rem;
+        }
+
+        .mobile-nav.open { display: flex; }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .mobile-nav a:hover { color: var(--accent); }
+
+        /* ══════════════════════════════════
+           PAGE SHELL
+        ══════════════════════════════════ */
+        .page {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 var(--side-pad);
+        }
+
+        /* ══════════════════════════════════
+           HERO
+        ══════════════════════════════════ */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            gap: 5rem;
+            align-items: start;
+            padding: 6rem 0 5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+            font-weight: 500;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.75rem;
+            color: var(--text-primary);
+        }
+
+        .hero h1 i {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-desc {
+            font-size: 0.96rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            font-size: 0.66rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            padding: 0.28rem 0.7rem;
+            border-radius: 2px;
+        }
+
+        /* Photo */
+        .photo-frame {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            background-color: #E4E0D9;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .photo-placeholder svg { opacity: 0.3; }
+
+        .photo-placeholder p {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.45;
+        }
+
+        .photo-caption {
+            margin-top: 0.65rem;
+            font-size: 0.66rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        /* ══════════════════════════════════
+           SECTIONS
+        ══════════════════════════════════ */
+        .section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 2.75rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .section-label {
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        /* Publication rows */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--border);
+        }
+
+        .pub-item {
+            display: grid;
+            grid-template-columns: 88px 128px 1fr 108px;
+            align-items: baseline;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: background 0.15s;
+        }
+
+        .pub-item:hover { background: rgba(0,0,0,0.02); }
+
+        .pub-item:hover .pub-title {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .pub-year, .pub-type, .pub-outlet {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .pub-outlet { text-align: right; }
+
+        .pub-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 500;
+            padding-right: 2rem;
+            color: var(--text-primary);
+            transition: color 0.2s;
+        }
+
+        /* Essay cards */
+        .essay-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .essay-card {
+            text-decoration: none;
+            color: var(--text-primary);
+            display: block;
+            padding: 1.75rem;
+            border: 1px solid var(--border);
+            background: rgba(242, 240, 235, 0.75);
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+
+        .essay-card:hover {
+            border-color: var(--accent);
+            box-shadow: 3px 3px 0 var(--accent);
+        }
+
+        .essay-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.66rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.65rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .essay-title {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 0.85rem;
+            color: var(--text-primary);
+            transition: color 0.2s;
+        }
+
+        .essay-card:hover .essay-title { color: var(--accent); }
+
+        .essay-excerpt {
+            font-size: 0.84rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* ══════════════════════════════════
+           FOOTER
+        ══════════════════════════════════ */
+        footer {
+            padding: 2.5rem 0 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--text-secondary);
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover { color: var(--accent); }
+
+        /* ══════════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════════ */
+        @media (max-width: 900px) {
+            :root { --side-pad: 2rem; }
+
+            .main-nav { display: none; }
+            .hamburger { display: flex; }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 4rem 0 3rem;
+            }
+
+            .hero-photo { max-width: 160px; }
+
+            .pub-item { grid-template-columns: 70px 1fr; }
+            .pub-type, .pub-outlet { display: none; }
+
+            .essay-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 560px) {
+            :root { --side-pad: 1.25rem; }
+            .hero h1 { font-size: 2.4rem; }
+            .footer-name { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+    <div class="header-inner">
+        <a href="#" class="site-name">Imran<span>.</span>Hossain</a>
+
+        <nav>
+            <ul class="main-nav">
+                <li><a href="#research">Research</a></li>
+                <li><a href="#journalism">Journalism</a></li>
+                <li><a href="#essays">Essays</a></li>
+                <li class="nav-cv"><a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" rel="noopener">CV ↗</a></li>
+            </ul>
+        </nav>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="#research"   onclick="closeMobileNav()">Research</a>
+        <a href="#journalism" onclick="closeMobileNav()">Journalism</a>
+        <a href="#essays"     onclick="closeMobileNav()">Essays</a>
+        <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" rel="noopener">CV ↗</a>
+    </nav>
+</header>
+
+<!-- ══ MAIN ══ -->
+<main class="page">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-text">
+            <p class="hero-eyebrow">Economics · Mathematics · Journalism</p>
+            <h1>Quantifying narrative.<br><i>Qualifying data.</i></h1>
+            <p class="hero-desc">
+                Research associate at the intersection of macroeconomic theory and mathematical
+                rigour. Formerly at <em>The Business Standard</em>, Bangladesh —
+                translating complex data into stories that matter.
+            </p>
+            <div class="hero-tags">
+                <span class="tag">MS Mathematics</span>
+                <span class="tag">Economics Graduate</span>
+                <span class="tag">The Business Standard</span>
+                <span class="tag">Dhaka, Bangladesh</span>
+            </div>
+        </div>
+
+        <div class="hero-photo">
+            <div class="photo-frame">
+                <!--
+                    TO ADD YOUR PHOTO:
+                    1. Upload your photo to the same GitHub folder as index.html
+                    2. Replace the placeholder div below with:
+                       <img src="photo.jpg" alt="Imran Hossain">
+                -->
+                <div class="photo-placeholder">
+                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                    </svg>
+                    <p>Your photo here</p>
+                </div>
+            </div>
+            <p class="photo-caption">Imran Hossain</p>
+        </div>
+    </section>
+
+    <!-- Research -->
+    <section class="section" id="research">
+        <div class="section-header">
+            <h2>Academic Research</h2>
+            <span class="section-label">Working Papers</span>
+        </div>
+        <div class="pub-list">
+            <a href="#" class="pub-item">
+                <span class="pub-year">2024</span>
+                <span class="pub-type">Working Paper</span>
+                <span class="pub-title">Your Research Paper Title Goes Here</span>
+                <span class="pub-outlet">Draft</span>
+            </a>
+            <a href="#" class="pub-item">
+                <span class="pub-year">2023</span>
+                <span class="pub-type">Co-Authored</span>
+                <span class="pub-title">Your Second Research Paper Title Goes Here</span>
+                <span class="pub-outlet">Journal</span>
+            </a>
+            <a href="#" class="pub-item">
+                <span class="pub-year">2022</span>
+                <span class="pub-type">Thesis</span>
+                <span class="pub-title">Your Undergraduate Thesis Title Goes Here</span>
+                <span class="pub-outlet">University</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Journalism -->
+    <section class="section" id="journalism">
+        <div class="section-header">
+            <h2>Journalism</h2>
+            <span class="section-label">The Business Standard</span>
+        </div>
+        <div class="pub-list">
+            <a href="#" class="pub-item">
+                <span class="pub-year">2024</span>
+                <span class="pub-type">Feature</span>
+                <span class="pub-title">Your Article Title Goes Here</span>
+                <span class="pub-outlet">TBS</span>
+            </a>
+            <a href="#" class="pub-item">
+                <span class="pub-year">2023</span>
+                <span class="pub-type">Analysis</span>
+                <span class="pub-title">Your Article Title Goes Here</span>
+                <span class="pub-outlet">TBS</span>
+            </a>
+            <a href="#" class="pub-item">
+                <span class="pub-year">2023</span>
+                <span class="pub-type">Report</span>
+                <span class="pub-title">Your Article Title Goes Here</span>
+                <span class="pub-outlet">TBS</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Essays / Blog -->
+    <section class="section" id="essays">
+        <div class="section-header">
+            <h2>Essays &amp; Notes</h2>
+            <span class="section-label">Writing</span>
+        </div>
+        <div class="essay-grid">
+            <a href="#" class="essay-card">
+                <div class="essay-meta">
+                    <span>Date</span>
+                    <span>Tag</span>
+                </div>
+                <h3 class="essay-title">Your First Essay Title</h3>
+                <p class="essay-excerpt">A short excerpt or description of what this essay is about. One or two sentences is enough.</p>
+            </a>
+            <a href="#" class="essay-card">
+                <div class="essay-meta">
+                    <span>Date</span>
+                    <span>Tag</span>
+                </div>
+                <h3 class="essay-title">Your Second Essay Title</h3>
+                <p class="essay-excerpt">A short excerpt or description of what this essay is about. One or two sentences is enough.</p>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="page">
+    <span class="footer-name">Imran Hossain</span>
+
+    <div class="social-links">
+
+        <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+        </a>
+
+        <a href="YOUR_TWITTER_URL" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            Twitter
+        </a>
+
+        <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            GitHub
+        </a>
+
+    </div>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    hamburger.addEventListener('click', () => {
+        mobileNav.classList.toggle('open');
+    });
+
+    function closeMobileNav() {
+        mobileNav.classList.remove('open');
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
