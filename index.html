@@ -510,41 +510,17 @@
         /* ═══════════════════════════════════════════════════
            FOOTER — clean, split layout
         ═══════════════════════════════════════════════════ */
-        footer {
-            padding: 2.5rem 0 3rem;
-        }
-        .footer-inner {
-            max-width: var(--max-w);
-            margin: 0 auto;
-            padding: 0 var(--side-pad);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .footer-copy {
-            font-size: 0.62rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--border);
-        }
-        /* NEW: footer social links */
-        .footer-links {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        .footer-links a {
-            font-size: 0.62rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--border);
-            text-decoration: none;
-            transition: color var(--t-fast);
-        }
-        .footer-links a:hover { color: var(--accent); }
+footer {
+    padding: 2.5rem 0 3rem;
+    text-align: center;
+}
 
+.footer-copy {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary); /* changed from --border to --text-secondary */
+}
         /* ═══════════════════════════════════════════════════
            SCROLL-TO-TOP — appears after 400px scroll
         ═══════════════════════════════════════════════════ */
@@ -841,10 +817,7 @@
 
 <!-- ══ FOOTER — split layout with social text links ══ -->
 <footer role="contentinfo">
-    <div class="footer-inner">
-        <p class="footer-copy">Imran Hossain &middot; Dhaka, Bangladesh</p>
-        <!-- NEW: lightweight text links in footer -->
-    </div>
+    <p class="footer-copy">Imran Hossain &middot; Dhaka, Bangladesh</p>
 </footer>
 
 <!-- NEW: scroll-to-top FAB — appears after 400px of scroll -->
