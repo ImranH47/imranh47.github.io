@@ -1,165 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Imran Hossain - Research Associate at BIGD and Feature Journalist.">
-    <title>Imran Hossain</title>
-
-    <link rel="icon" type="image/png" href="imranh_favicon.png">
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Imran Hossain - Research Associate, Journalist, and MS Mathematics Student. Quantifying narrative. Qualifying data.">
+  <title>Imran Hossain | Research & Journalism</title>
+  <!-- Preload critical CSS for faster rendering -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Defer JS to prevent render-blocking -->
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-<header>
-    <div class="header-inner">
-        <a href="#" aria-label="Home">
-            <img src="imranh_logo.png" alt="Imran Hossain Logo" class="site-logo">
-        </a>
-
-        <nav aria-label="Main Navigation">
-            <ul class="main-nav">
-                <li><a href="#research">Research</a></li>
-                <li><a href="#journalism">Journalism</a></li>
-                <li class="nav-cv"><a href="https://drive.google.com/drive/u/0/folders/1FatxoNnttgBOtzTB8mfUdE6-ZA1w7wng" target="_blank" rel="noopener">CV ↗</a></li>
-            </ul>
-        </nav>
-
-        <button class="hamburger" id="hamburger" aria-expanded="false" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
-
-    <nav class="mobile-nav" id="mobile-nav" aria-hidden="true">
-        <a href="#research" class="mobile-link">Research</a>
-        <a href="#journalism" class="mobile-link">Journalism</a>
-        <a href="https://drive.google.com/drive/u/0/folders/1FatxoNnttgBOtzTB8mfUdE6-ZA1w7wng" target="_blank" rel="noopener" class="mobile-link nav-cv-mobile">CV ↗</a>
+  <!-- Sticky Navigation with backdrop blur for modern feel -->
+  <header class="site-header">
+    <a href="#" class="logo" aria-label="Return to top">Imran Hossain</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#journalism" class="nav-link">Journalism</a></li>
+        <li><a href="https://drive.google.com/drive/u/0/folders/1FatxoNnttgBOtzTB8mfUdE6-ZA1w7wng" target="_blank" rel="noopener noreferrer" class="nav-link">CV ↗</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<main class="page">
-
-    <section class="hero animate-on-scroll">
-        <div class="hero-text">
-            <h1 class="hero-name"><span class="text-accent">Imran</span> Hossain</h1>
-            <p class="hero-tagline">Quantifying narrative. <i>Qualifying data.</i></p>
-
-            <div class="hero-desc">
-                <p>I am a Research Associate at the BRAC Institute of Governance and Development (BIGD), BRAC University, where I am part of the Gender and Social Development Cluster, working under the supervision of Dr. Shaila Ahmed. My work involves data collection, quantitative analysis, and applied policy research — building hands-on experience in development-focused empirical work.</p>
-                <p>Alongside my professional work, I am pursuing an MS in Mathematics at Ahsanullah University of Science and Technology. Before that, I completed my BSc in Economics at Jahangirnagar University.</p>
-                <p>Prior to joining BIGD, I worked full-time for over a year as a feature journalist at <em>The Business Standard</em>, one of Bangladesh's leading English-language dailies, covering over a hundred stories on socioeconomic issues, culture, education, and technology.</p>
-                <p>I aim to pursue higher studies in economics. My academic interests lie in microeconomics, political economy, and development economics.</p>
-            </div>
-
-            <div class="hero-socials">
-                <a class="social-icon-link" href="https://www.linkedin.com/in/imranh47/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                        <rect x="2" y="9" width="4" height="12"/>
-                        <circle cx="4" cy="4" r="2"/>
-                    </svg>
-                </a>
-                <a class="social-icon-link" href="https://x.com/ImranH_47/" target="_blank" rel="noopener" aria-label="X (Twitter)">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                </a>
-                <a class="social-icon-link" href="https://github.com/ImranH47" target="_blank" rel="noopener" aria-label="GitHub">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <a href="mailto:imran.hossen@bracu.ac.bd" class="hero-email">imran.hossen@bracu.ac.bd</a>
-        </div>
-
-        <div class="hero-photo">
-            <div class="photo-frame">
-                <img src="photo.jpg" alt="Imran Hossain Portrait" onerror="this.style.display='none'">
-                <div class="photo-placeholder" aria-hidden="true">
-                    </div>
-            </div>
-        </div>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="hero" class="hero fade-in-section">
+      <h1 class="hero-title">Imran Hossain</h1>
+      <p class="hero-tagline">Quantifying narrative. Qualifying data.</p>
+      <div class="hero-content">
+        <p>I am a Research Associate at the BRAC Institute of Governance and Development (BIGD), BRAC University, where I am part of the Gender and Social Development Cluster, working under the supervision of Dr. Shaila Ahmed. My work involves data collection, quantitative analysis, and applied policy research — building hands-on experience in development-focused empirical work.</p>
+        <p>Alongside my professional work, I am pursuing an MS in Mathematics at Ahsanullah University of Science and Technology. Before that, I completed my BSc in Economics at Jahangirnagar University.</p>
+        <p>Prior to joining BIGD, I worked full-time for over a year as a feature journalist at The Business Standard, one of Bangladesh's leading English-language dailies, covering over a hundred stories on socioeconomic issues, culture, education, and technology.</p>
+        <p>I aim to pursue higher studies in economics. My academic interests lie in microeconomics, political economy, and development economics.</p>
+        <a href="mailto:imran.hossen@bracu.ac.bd" class="contact-link">imran.hossen@bracu.ac.bd</a>
+      </div>
     </section>
 
-    <section class="section animate-on-scroll" id="research">
-        <div class="section-header">
-            <h2>Academic Research</h2>
-            <span class="section-label">Papers</span>
-        </div>
-        <div class="pub-list">
-            <a href="https://www.academia.edu/165399931/Does_Crop_Diversification_Improve_Rural_Household_Income_in_Bangladesh" target="_blank" rel="noopener" class="pub-item">
-                <span class="pub-year">2026</span>
-                <span class="pub-type">Working Paper</span>
-                <span class="pub-title">
-                    Does Crop Diversification Improve Rural Household Income in Bangladesh
-                    <span class="pub-authors">Imran Hossain</span>
-                </span>
+    <!-- Academic Research Section -->
+    <section id="research" class="content-section fade-in-section">
+      <h2 class="section-title">Academic Research</h2>
+      <div class="section-subtitle">Papers</div>
+      <div class="cards-grid">
+        <article class="paper-card">
+          <time class="card-date" datetime="2026">2026</time>
+          <span class="card-tag">Working Paper</span>
+          <h3 class="card-title">
+            <a href="https://www.academia.edu/165399931/Does_Crop_Diversification_Improve_Rural_Household_Income_in_Bangladesh">
+              Does Crop Diversification Improve Rural Household Income in Bangladesh
             </a>
+          </h3>
+          <p class="card-authors">Imran Hossain</p>
+        </article>
 
-            <a href="https://www.academia.edu/165400200/Does_Institutional_Quality_Matter_for_Financial_Development_Evidence_from_Six_Asian_Emerging_Economies_" target="_blank" rel="noopener" class="pub-item">
-                <span class="pub-year">2024</span>
-                <span class="pub-type">Conference</span>
-                <span class="pub-title">
-                    Does Institutional Quality Matter for Financial Development? Evidence from Six Asian Emerging Economies
-                    <span class="pub-authors">Samia Islam, Mohammad Obaidullah, Imran Hossain, Ann Naser Nabil</span>
-                </span>
+        <article class="paper-card">
+          <time class="card-date" datetime="2024">2024</time>
+          <span class="card-tag">Conference</span>
+          <h3 class="card-title">
+            <a href="https://www.academia.edu/165400200/Does_Institutional_Quality_Matter_for_Financial_Development_Evidence_from_Six_Asian_Emerging_Economies_">
+              Does Institutional Quality Matter for Financial Development? Evidence from Six Asian Emerging Economies
             </a>
-        </div>
+          </h3>
+          <p class="card-authors">Samia Islam, Mohammad Obaidullah, Imran Hossain, Ann Naser Nabil</p>
+        </article>
+      </div>
     </section>
 
-    <section class="section animate-on-scroll" id="journalism">
-        <div class="section-header">
-            <h2>Journalism</h2>
-            <span class="section-label">The Business Standard</span>
-        </div>
-        <div class="pub-list">
-            <a href="https://www.tbsnews.net/features/panorama/online-moral-police-forces-cracking-down-interfaith-relationships-1056001" target="_blank" rel="noopener" class="pub-item">
-                <span class="pub-year">TBS</span>
-                <span class="pub-type">Feature</span>
-                <span class="pub-title">Online Moral Police Forces Cracking Down on Interfaith Relationships</span>
-            </a>
-            
-            <a href="https://www.tbsnews.net/features/panorama/what-about-our-own-adolescents-1124121" target="_blank" rel="noopener" class="pub-item">
-                <span class="pub-year">TBS</span>
-                <span class="pub-type">Analysis</span>
-                <span class="pub-title">What About Our Own Adolescents?</span>
-            </a>
-
-            <a href="https://www.tbsnews.net/features/panorama/dhakas-buried-past-archaeological-excavation-unveils-new-history-988176" target="_blank" rel="noopener" class="pub-item">
-                <span class="pub-year">TBS</span>
-                <span class="pub-type">Feature</span>
-                <span class="pub-title">Dhaka's Buried Past: Archaeological Excavation Unveils New History</span>
-            </a>
-
-            <a href="https://www.tbsnews.net/features/panorama/phd-landscape-bangladesh-reality-check-1090906" target="_blank" rel="noopener" class="pub-item">
-                <span class="pub-year">TBS</span>
-                <span class="pub-type">Feature</span>
-                <span class="pub-title">PhD Landscape in Bangladesh: A Reality Check</span>
-            </a>
-
-            <a href="https://www.tbsnews.net/features/panorama/how-crypto-thrives-bangladeshs-legal-grey-zone-1137576" target="_blank" rel="noopener" class="pub-item">
-                <span class="pub-year">TBS</span>
-                <span class="pub-type">Analysis</span>
-                <span class="pub-title">How Crypto Thrives in Bangladesh's Legal Grey Zone</span>
-            </a>
-        </div>
+    <!-- Journalism Section -->
+    <section id="journalism" class="content-section fade-in-section">
+      <h2 class="section-title">Journalism</h2>
+      <div class="section-subtitle">The Business Standard</div>
+      <div class="cards-grid">
+        <article class="article-card">
+          <span class="card-tag">Feature</span>
+          <h3 class="card-title"><a href="https://www.tbsnews.net/features/panorama/online-moral-police-forces-cracking-down-interfaith-relationships-1056001">Online Moral Police Forces Cracking Down on Interfaith Relationships</a></h3>
+        </article>
+        <article class="article-card">
+          <span class="card-tag">Analysis</span>
+          <h3 class="card-title"><a href="https://www.tbsnews.net/features/panorama/what-about-our-own-adolescents-1124121">What About Our Own Adolescents?</a></h3>
+        </article>
+        <article class="article-card">
+          <span class="card-tag">Feature</span>
+          <h3 class="card-title"><a href="https://www.tbsnews.net/features/panorama/dhakas-buried-past-archaeological-excavation-unveils-new-history-988176">Dhaka's Buried Past: Archaeological Excavation Unveils New History</a></h3>
+        </article>
+        <article class="article-card">
+          <span class="card-tag">Feature</span>
+          <h3 class="card-title"><a href="https://www.tbsnews.net/features/panorama/phd-landscape-bangladesh-reality-check-1090906">PhD Landscape in Bangladesh: A Reality Check</a></h3>
+        </article>
+        <article class="article-card">
+          <span class="card-tag">Analysis</span>
+          <h3 class="card-title"><a href="https://www.tbsnews.net/features/panorama/how-crypto-thrives-bangladeshs-legal-grey-zone-1137576">How Crypto Thrives in Bangladesh's Legal Grey Zone</a></h3>
+        </article>
+      </div>
     </section>
+  </main>
 
-</main>
+  <footer class="site-footer">
+    <p>Imran Hossain · Dhaka, Bangladesh</p>
+  </footer>
 
-<button id="scrollToTopBtn" aria-label="Scroll back to top">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-</button>
-
-<footer class="page">
-    <p class="footer-copy">© <span id="currentYear"></span> Imran Hossain · Dhaka, Bangladesh</p>
-</footer>
-
-<script src="script.js"></script>
+  <!-- Accessible scroll-to-top button -->
+  <button id="scroll-to-top" aria-label="Scroll to top" hidden>↑</button>
 </body>
 </html>
