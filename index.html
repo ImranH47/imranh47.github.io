@@ -3,434 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Imran Hossain - Research Associate at BIGD and Feature Journalist.">
     <title>Imran Hossain</title>
 
-    <!-- Favicon from repo -->
     <link rel="icon" type="image/png" href="imranh_favicon.png">
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Space+Grotesk:wght@300;400;500;600&display=swap');
-
-        :root {
-            --bg:             #F2F0EB;
-            --text-primary:   #1C1C1C;
-            --text-secondary: #6B6560;
-            --accent:         #B5281C;
-            --border:         #D8D4CE;
-
-            --font-serif: 'Cormorant Garamond', serif;
-            --font-sans:  'Space Grotesk', sans-serif;
-
-            --max-w:    1060px;
-            --side-pad: 4rem;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        ::selection { background: var(--accent); color: #fff; }
-
-        body {
-            background-color: var(--bg);
-            background-image: radial-gradient(circle, #C4C0B8 1px, transparent 1px);
-            background-size: 28px 28px;
-            color: var(--text-primary);
-            font-family: var(--font-sans);
-            -webkit-font-smoothing: antialiased;
-            line-height: 1.6;
-        }
-
-        /* ══ HEADER ══ */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background-color: rgba(242, 240, 235, 0.94);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .header-inner {
-            max-width: var(--max-w);
-            margin: 0 auto;
-            padding: 0 var(--side-pad);
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .site-logo {
-            height: 28px;
-            width: auto;
-            display: block;
-        }
-
-        .main-nav {
-            display: flex;
-            align-items: center;
-            gap: 2.25rem;
-            list-style: none;
-        }
-
-        .main-nav a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.76rem;
-            font-weight: 500;
-            letter-spacing: 0.09em;
-            text-transform: uppercase;
-            transition: color 0.2s;
-            position: relative;
-        }
-
-        .main-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -3px; left: 0;
-            width: 0; height: 1.5px;
-            background: var(--accent);
-            transition: width 0.25s;
-        }
-
-        .main-nav a:hover { color: var(--accent); }
-        .main-nav a:hover::after { width: 100%; }
-
-        .nav-cv a {
-            color: var(--accent) !important;
-            border: 1px solid var(--accent);
-            padding: 0.28rem 0.85rem;
-            border-radius: 2px;
-            transition: background 0.2s, color 0.2s !important;
-        }
-
-        .nav-cv a::after { display: none; }
-        .nav-cv a:hover { background: var(--accent); color: #fff !important; }
-
-        /* Hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 4px;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 22px; height: 1.5px;
-            background: var(--text-primary);
-            transition: all 0.3s;
-        }
-
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            background: var(--bg);
-            border-top: 1px solid var(--border);
-            padding: 1.5rem var(--side-pad);
-            gap: 1.25rem;
-        }
-
-        .mobile-nav.open { display: flex; }
-
-        .mobile-nav a {
-            text-decoration: none;
-            color: var(--text-primary);
-            font-size: 0.88rem;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-        }
-
-        .mobile-nav a:hover { color: var(--accent); }
-
-        /* ══ PAGE SHELL ══ */
-        .page {
-            max-width: var(--max-w);
-            margin: 0 auto;
-            padding: 0 var(--side-pad);
-        }
-
-        /* ══ HERO ══ */
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 4rem;
-            align-items: start;
-            padding: 5.5rem 0 5rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .hero-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .hero-name {
-            font-family: var(--font-serif);
-            font-size: clamp(3rem, 5vw, 4.6rem);
-            font-weight: 600;
-            line-height: 1.0;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-            margin-bottom: 0.6rem;
-        }
-
-        .hero-tagline {
-            font-family: var(--font-serif);
-            font-size: clamp(1.05rem, 1.6vw, 1.3rem);
-            font-weight: 400;
-            font-style: italic;
-            color: var(--text-secondary);
-            margin-bottom: 1.75rem;
-            line-height: 1.4;
-        }
-
-        .hero-tagline i {
-            color: var(--accent);
-            font-style: italic;
-        }
-
-        .hero-desc {
-            font-size: 0.9rem;
-            font-weight: 300;
-            line-height: 1.9;
-            color: var(--text-secondary);
-            max-width: 560px;
-            margin-bottom: 1.75rem;
-        }
-
-        .hero-desc p + p {
-            margin-top: 1em;
-        }
-
-        /* Social icons */
-        .hero-socials {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.1rem;
-        }
-
-        .social-icon-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(181, 40, 28, 0.07);
-            border: 1px solid rgba(181, 40, 28, 0.18);
-            color: var(--accent);
-            text-decoration: none;
-            transition: background 0.2s, border-color 0.2s, transform 0.2s;
-            flex-shrink: 0;
-        }
-
-        .social-icon-link:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: #fff;
-            transform: translateY(-2px);
-        }
-
-        .social-icon-link svg { display: block; flex-shrink: 0; }
-
-        /* Email line */
-        .hero-email {
-            font-size: 0.82rem;
-            font-weight: 400;
-            letter-spacing: 0.01em;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .hero-email:hover { color: var(--accent); }
-
-        /* Photo */
-        .hero-photo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 0.5rem;
-        }
-
-        .photo-frame {
-            width: 100%;
-            aspect-ratio: 4 / 5;
-            background-color: #E4E0D9;
-            border: 1px solid var(--border);
-            overflow: hidden;
-        }
-
-        .photo-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .photo-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        .photo-placeholder svg { opacity: 0.3; }
-
-        .photo-placeholder p {
-            font-size: 0.63rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            opacity: 0.45;
-        }
-
-        /* ══ SECTIONS ══ */
-        .section {
-            padding: 5rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .section-header {
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-            margin-bottom: 2.75rem;
-        }
-
-        .section-header h2 {
-            font-family: var(--font-serif);
-            font-size: 2rem;
-            font-weight: 400;
-            font-style: italic;
-            color: var(--accent);
-        }
-
-        .section-label {
-            font-size: 0.67rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-        }
-
-        /* Publication rows — 3 columns */
-        .pub-list {
-            display: flex;
-            flex-direction: column;
-            border-top: 1px solid var(--border);
-        }
-
-        .pub-item {
-            display: grid;
-            grid-template-columns: 72px 120px 1fr;
-            align-items: baseline;
-            gap: 0 1rem;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid var(--border);
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: background 0.15s;
-        }
-
-        .pub-item:hover { background: rgba(0,0,0,0.02); }
-
-        .pub-item:hover .pub-title {
-            color: var(--accent);
-            font-style: italic;
-        }
-
-        .pub-year, .pub-type {
-            font-size: 0.69rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-        }
-
-        .pub-title {
-            font-family: var(--font-serif);
-            font-size: 1.35rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            transition: color 0.2s;
-            line-height: 1.25;
-        }
-
-        .pub-authors {
-            display: block;
-            font-size: 0.72rem;
-            font-weight: 400;
-            color: var(--text-secondary);
-            font-family: var(--font-sans);
-            margin-top: 0.3rem;
-            font-style: normal;
-        }
-
-        /* ══ FOOTER ══ */
-        footer {
-            padding: 2.5rem 0 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .footer-copy {
-            font-size: 0.65rem;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--border);
-        }
-
-        /* ══ RESPONSIVE ══ */
-        @media (max-width: 900px) {
-            :root { --side-pad: 2rem; }
-
-            .main-nav { display: none; }
-            .hamburger { display: flex; }
-            .hero-text { order: 1; }
-            .hero-photo { order: 0; }
-
-            .hero {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-                padding: 4rem 0 3.5rem;
-            }
-
-            .hero-photo {
-                max-width: 100%;
-            }
-
-            .pub-item { grid-template-columns: 60px 1fr; }
-            .pub-type { display: none; }
-        }
-
-        @media (max-width: 640px) {
-            :root { --side-pad: 1.25rem; }
-            .hero-name { font-size: 2.8rem; }
-            .hero-photo { max-width: 100%; }
-        }
-    </style>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
 <header>
     <div class="header-inner">
-        <a href="#">
-            <img src="imranh_logo.png" alt="imranh" class="site-logo">
+        <a href="#" aria-label="Home">
+            <img src="imranh_logo.png" alt="Imran Hossain Logo" class="site-logo">
         </a>
 
-        <nav>
+        <nav aria-label="Main Navigation">
             <ul class="main-nav">
                 <li><a href="#research">Research</a></li>
                 <li><a href="#journalism">Journalism</a></li>
@@ -438,26 +26,23 @@
             </ul>
         </nav>
 
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <button class="hamburger" id="hamburger" aria-expanded="false" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
     </div>
 
-    <nav class="mobile-nav" id="mobile-nav">
-        <a href="#research" onclick="closeMobileNav()">Research</a>
-        <a href="#journalism" onclick="closeMobileNav()">Journalism</a>
-        <a href="https://drive.google.com/drive/u/0/folders/1FatxoNnttgBOtzTB8mfUdE6-ZA1w7wng" target="_blank" rel="noopener">CV ↗</a>
+    <nav class="mobile-nav" id="mobile-nav" aria-hidden="true">
+        <a href="#research" class="mobile-link">Research</a>
+        <a href="#journalism" class="mobile-link">Journalism</a>
+        <a href="https://drive.google.com/drive/u/0/folders/1FatxoNnttgBOtzTB8mfUdE6-ZA1w7wng" target="_blank" rel="noopener" class="mobile-link nav-cv-mobile">CV ↗</a>
     </nav>
 </header>
 
-<!-- ══ MAIN ══ -->
 <main class="page">
 
-    <!-- Hero -->
-    <section class="hero">
-
+    <section class="hero animate-on-scroll">
         <div class="hero-text">
-            <h1 class="hero-name"><span style="color: var(--accent);">Imran</span> Hossain</h1>
+            <h1 class="hero-name"><span class="text-accent">Imran</span> Hossain</h1>
             <p class="hero-tagline">Quantifying narrative. <i>Qualifying data.</i></p>
 
             <div class="hero-desc">
@@ -492,22 +77,20 @@
 
         <div class="hero-photo">
             <div class="photo-frame">
-                <img src="photo.jpg" alt="Imran Hossain">
+                <img src="photo.jpg" alt="Imran Hossain Portrait" onerror="this.style.display='none'">
+                <div class="photo-placeholder" aria-hidden="true">
+                    </div>
             </div>
         </div>
-
     </section>
 
-    <!-- Research -->
-    <section class="section" id="research">
+    <section class="section animate-on-scroll" id="research">
         <div class="section-header">
             <h2>Academic Research</h2>
             <span class="section-label">Papers</span>
         </div>
         <div class="pub-list">
-
-            <a href="https://www.academia.edu/165399931/Does_Crop_Diversification_Improve_Rural_Household_Income_in_Bangladesh"
-               target="_blank" rel="noopener" class="pub-item">
+            <a href="https://www.academia.edu/165399931/Does_Crop_Diversification_Improve_Rural_Household_Income_in_Bangladesh" target="_blank" rel="noopener" class="pub-item">
                 <span class="pub-year">2026</span>
                 <span class="pub-type">Working Paper</span>
                 <span class="pub-title">
@@ -516,8 +99,7 @@
                 </span>
             </a>
 
-            <a href="https://www.academia.edu/165400200/Does_Institutional_Quality_Matter_for_Financial_Development_Evidence_from_Six_Asian_Emerging_Economies_"
-               target="_blank" rel="noopener" class="pub-item">
+            <a href="https://www.academia.edu/165400200/Does_Institutional_Quality_Matter_for_Financial_Development_Evidence_from_Six_Asian_Emerging_Economies_" target="_blank" rel="noopener" class="pub-item">
                 <span class="pub-year">2024</span>
                 <span class="pub-type">Conference</span>
                 <span class="pub-title">
@@ -525,86 +107,59 @@
                     <span class="pub-authors">Samia Islam, Mohammad Obaidullah, Imran Hossain, Ann Naser Nabil</span>
                 </span>
             </a>
-
         </div>
     </section>
 
-    <!-- Journalism -->
-    <section class="section" id="journalism">
+    <section class="section animate-on-scroll" id="journalism">
         <div class="section-header">
             <h2>Journalism</h2>
             <span class="section-label">The Business Standard</span>
         </div>
         <div class="pub-list">
-
-
-            <a href="https://www.tbsnews.net/features/panorama/online-moral-police-forces-cracking-down-interfaith-relationships-1056001"
-               target="_blank" rel="noopener" class="pub-item">
+            <a href="https://www.tbsnews.net/features/panorama/online-moral-police-forces-cracking-down-interfaith-relationships-1056001" target="_blank" rel="noopener" class="pub-item">
                 <span class="pub-year">TBS</span>
                 <span class="pub-type">Feature</span>
                 <span class="pub-title">Online Moral Police Forces Cracking Down on Interfaith Relationships</span>
             </a>
             
-            <a href="https://www.tbsnews.net/features/panorama/what-about-our-own-adolescents-1124121"
-               target="_blank" rel="noopener" class="pub-item">
+            <a href="https://www.tbsnews.net/features/panorama/what-about-our-own-adolescents-1124121" target="_blank" rel="noopener" class="pub-item">
                 <span class="pub-year">TBS</span>
                 <span class="pub-type">Analysis</span>
                 <span class="pub-title">What About Our Own Adolescents?</span>
             </a>
 
-            <a href="https://www.tbsnews.net/features/panorama/dhakas-buried-past-archaeological-excavation-unveils-new-history-988176"
-               target="_blank" rel="noopener" class="pub-item">
+            <a href="https://www.tbsnews.net/features/panorama/dhakas-buried-past-archaeological-excavation-unveils-new-history-988176" target="_blank" rel="noopener" class="pub-item">
                 <span class="pub-year">TBS</span>
                 <span class="pub-type">Feature</span>
                 <span class="pub-title">Dhaka's Buried Past: Archaeological Excavation Unveils New History</span>
             </a>
 
-            <a href="https://www.tbsnews.net/features/panorama/phd-landscape-bangladesh-reality-check-1090906"
-               target="_blank" rel="noopener" class="pub-item">
+            <a href="https://www.tbsnews.net/features/panorama/phd-landscape-bangladesh-reality-check-1090906" target="_blank" rel="noopener" class="pub-item">
                 <span class="pub-year">TBS</span>
                 <span class="pub-type">Feature</span>
                 <span class="pub-title">PhD Landscape in Bangladesh: A Reality Check</span>
             </a>
 
-            <a href="https://www.tbsnews.net/features/panorama/how-crypto-thrives-bangladeshs-legal-grey-zone-1137576"
-               target="_blank" rel="noopener" class="pub-item">
+            <a href="https://www.tbsnews.net/features/panorama/how-crypto-thrives-bangladeshs-legal-grey-zone-1137576" target="_blank" rel="noopener" class="pub-item">
                 <span class="pub-year">TBS</span>
                 <span class="pub-type">Analysis</span>
                 <span class="pub-title">How Crypto Thrives in Bangladesh's Legal Grey Zone</span>
             </a>
-
         </div>
     </section>
 
 </main>
 
-<!-- ══ FOOTER ══ -->
+<button id="scrollToTopBtn" aria-label="Scroll back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
+
 <footer class="page">
-    <p class="footer-copy">Imran Hossain · Dhaka, Bangladesh</p>
+    <p class="footer-copy">© <span id="currentYear"></span> Imran Hossain · Dhaka, Bangladesh</p>
 </footer>
 
-<script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobile-nav');
-
-    hamburger.addEventListener('click', () => {
-        mobileNav.classList.toggle('open');
-    });
-
-    function closeMobileNav() {
-        mobileNav.classList.remove('open');
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const target = document.querySelector(a.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
